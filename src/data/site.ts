@@ -4,17 +4,17 @@ export const projectData = [
     title: "WASH facility for community education",
     category: "Water, sanitation and hygiene",
     image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
+      "https://noblereportnigeria.wordpress.com/wp-content/uploads/2022/11/img-20221129-wa0028.jpg?w=1024",
     summary:
       "The club delivered a modern WASH facility to a Rivers State community secondary school, improving hygiene and access to safe sanitation for students and staff.",
     details:
       "Rotary’s WASH work supports schools and communities by improving access to clean water, safe toilets, and handwashing facilities. In many communities, weak sanitation systems reduce school attendance, increase preventable disease, and limit dignity and learning. This project was designed to address those gaps by building practical infrastructure and creating healthier habits for the next generation.",
     gallery: [
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
       "https://noblereportnigeria.wordpress.com/wp-content/uploads/2022/11/img-20221129-wa0028.jpg?w=1024",
+      "https://www.current-matters.blog/wp-content/uploads/2022/02/IMG-20220225-WA0091.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrFKR6f9Kq4N6cCX1IoyI4bv6Et3sSKVEnwZXaKTZkDeKxYcZSHGr08WM&s=10",
       "https://clubrunner.blob.core.windows.net/00000050390/Images/Capture_20260529-161744.JPG",
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d81?auto=format&fit=crop&w=1200&q=80",
+      "https://scontent.flos3-1.fna.fbcdn.net/v/t39.30808-6/488870937_9751865411519593_2263329419633151442_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1366&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aJT2El5QFTMQ7kNvwEM7r5P&_nc_oc=Ado_Fh4wjNg5vuigc9UkBwF6Q7Dtp9td-Ri5-BVQ-0WpitGZ2i2MTWhsu0fSGw2Ch3M&_nc_zt=23&_nc_ht=scontent.flos3-1.fna&_nc_gid=v5CHBj0tRsZR49tA0rF3QQ&_nc_ss=7b289&oh=00_AQKGdCPjP2hnGTZb-wrM05ZOX00pC2NrzwlSr5kImXGg_g&oe=6AA881B3",
     ],
     highlights: [
       "Improved handwashing and sanitation access for students",
@@ -35,9 +35,9 @@ export const projectData = [
     gallery: [
       "https://www.current-matters.blog/wp-content/uploads/2022/02/IMG-20220225-WA0091.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXwIL-UzeEWFnG0est79x3xoeIOdvSzBsCKwb5EGidB0lEVN8DotgsGO4&s=10",
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+      "https://noblereportnigeria.wordpress.com/wp-content/uploads/2022/11/img-20221129-wa0028.jpg?w=1024",
+      "https://clubrunner.blob.core.windows.net/00000050390/Images/Capture_20260529-161744.JPG",
+      "https://scontent.flos3-1.fna.fbcdn.net/v/t39.30808-6/488870937_9751865411519593_2263329419633151442_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1366&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aJT2El5QFTMQ7kNvwEM7r5P&_nc_oc=Ado_Fh4wjNg5vuigc9UkBwF6Q7Dtp9td-Ri5-BVQ-0WpitGZ2i2MTWhsu0fSGw2Ch3M&_nc_zt=23&_nc_ht=scontent.flos3-1.fna&_nc_gid=v5CHBj0tRsZR49tA0rF3QQ&_nc_ss=7b289&oh=00_AQKGdCPjP2hnGTZb-wrM05ZOX00pC2NrzwlSr5kImXGg_g&oe=6AA881B3",
     ],
     highlights: [
       "Raised awareness around health and civic participation",
@@ -60,7 +60,7 @@ export const projectData = [
       "https://noblereportnigeria.wordpress.com/wp-content/uploads/2022/11/img-20221129-wa0028.jpg?w=1024",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrFKR6f9Kq4N6cCX1IoyI4bv6Et3sSKVEnwZXaKTZkDeKxYcZSHGr08WM&s=10",
       "https://clubrunner.blob.core.windows.net/00000050390/Images/Capture_20260529-161744.JPG",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+      "https://www.current-matters.blog/wp-content/uploads/2022/02/IMG-20220225-WA0091.jpg",
     ],
     highlights: [
       "Built trust through collaborative local action",
