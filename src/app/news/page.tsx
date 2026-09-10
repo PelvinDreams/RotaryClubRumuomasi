@@ -31,11 +31,11 @@ export default async function NewsPage() {
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {stories.map((story) => (
-            <article key={story.slug} className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_rgba(12,31,57,0.06)]">
-              <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined}>
-                <NewsImage src={story.image} alt={story.title} className="h-64 w-full object-cover" />
+            <article key={story.slug} className="flex h-full flex-col overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_rgba(12,31,57,0.06)]">
+              <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined} className="block overflow-hidden">
+                <NewsImage src={story.image} alt={story.title} className="aspect-[4/3] w-full object-cover" />
               </Link>
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <span className="inline-block text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-[#0e4b9c]">{story.category}</span>
                 <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined} className="mt-3 block text-2xl font-bold text-[#0a1f3a] hover:text-[#0e4b9c]">
                   {story.title}

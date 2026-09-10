@@ -1,0 +1,30 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="url(#paint0_linear_1_2)"/>
+  <circle cx="1020" cy="170" r="110" fill="#D9B85A" fill-opacity="0.18"/>
+  <circle cx="220" cy="690" r="150" fill="#D9B85A" fill-opacity="0.12"/>
+  <rect x="120" y="120" width="960" height="660" rx="38" fill="#0B1F38" fill-opacity="0.42" stroke="#D9B85A" stroke-opacity="0.55"/>
+  <circle cx="440" cy="360" r="132" fill="#3C6DB0" fill-opacity="0.9"/>
+  <circle cx="760" cy="358" r="146" fill="#D9B85A" fill-opacity="0.8"/>
+  <path d="M410 504C410 451.43 453.43 408 506 408H530C582.57 408 626 451.43 626 504V540H410V504Z" fill="#F3F6FB"/>
+  <circle cx="518" cy="318" r="94" fill="#F0CBA0"/>
+  <path d="M440 314C440 256.611 486.611 210 544 210H566C623.389 210 670 256.611 670 314V334H440V314Z" fill="#0B1F38"/>
+  <path d="M695 510C695 456.98 738.98 413 792 413H813C866.02 413 910 456.98 910 510V548H695V510Z" fill="#F3F6FB"/>
+  <circle cx="803" cy="318" r="92" fill="#F1D1AF"/>
+  <path d="M720 314C720 261.306 763.306 218 816 218H834C886.694 218 930 261.306 930 314V334H720V314Z" fill="#6D3F2E"/>
+  <rect x="160" y="612" width="880" height="64" rx="18" fill="#E8EEF8" fill-opacity="0.22"/>
+  <circle cx="202" cy="644" r="17" fill="#D9B85A"/>
+  <rect x="240" y="632" width="210" height="24" rx="12" fill="#E8EEF8" fill-opacity="0.45"/>
+  <rect x="480" y="632" width="160" height="24" rx="12" fill="#E8EEF8" fill-opacity="0.35"/>
+  <rect x="670" y="632" width="240" height="24" rx="12" fill="#E8EEF8" fill-opacity="0.45"/>
+  <text x="600" y="170" text-anchor="middle" fill="#F4F8FF" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700" letter-spacing="2">Rotary Club of Rumuomasi</text>
+  <text x="600" y="220" text-anchor="middle" fill="#D9B85A" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="600" letter-spacing="8">HEALTH &amp; CIVIC ADVOCACY</text>
+  <path d="M332 214L288 270" stroke="#D9B85A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M872 214L916 270" stroke="#D9B85A" stroke-width="10" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1F3A"/>
+      <stop offset="0.5" stop-color="#123F73"/>
+      <stop offset="1" stop-color="#0A1F3A"/>
+    </linearGradient>
+  </defs>
+</svg>

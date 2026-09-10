@@ -3,21 +3,24 @@ import path from "node:path";
 
 export type SubmissionType = "join" | "donate";
 
-export async function saveSubmission(type: SubmissionType, payload: Record<string, unknown>) {
-  const filePath = path.join(process.cwd(), "src", "data", "submissions.json");
-  const folderPath = path.dirname(filePath);
+type SubmissionStore = {
+  join: Array<Record<string, unknown>>;
+  donate: Array<Record<string, unknown>>;
+};
 
-  await mkdir(folderPath, { recursive: true });
+const memoryStore = globalThis as typeof globalThis & {
+  __rotarySubmissionStore?: SubmissionStore;
+};
 
-  let existing: Array<Record<string, unknown>> = [];
-
-  try {
-    const content = await readFile(filePath, "utf8");
-    existing = JSON.parse(content || "[]");
-  } catch {
-    existing = [];
+function getMemoryStore(): SubmissionStore {
+  if (!memoryStore.__rotarySubmissionStore) {
+    memoryStore.__rotarySubmissionStore = { join: [], donate: [] };
   }
 
+  return memoryStore.__rotarySubmissionStore;
+}
+
+export async function saveSubmission(type: SubmissionType, payload: Record<string, unknown>) {
   const entry = {
     id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
     type,
@@ -25,8 +28,28 @@ export async function saveSubmission(type: SubmissionType, payload: Record<strin
     ...payload,
   };
 
-  const next = [...existing, entry];
-  await writeFile(filePath, JSON.stringify(next, null, 2), "utf8");
+  const memory = getMemoryStore();
+  memory[type] = [...memory[type], entry];
+
+  try {
+    const filePath = path.join(process.cwd(), "src", "data", "submissions.json");
+    const folderPath = path.dirname(filePath);
+
+    await mkdir(folderPath, { recursive: true });
+
+    let existing: Array<Record<string, unknown>> = [];
+    try {
+      const content = await readFile(filePath, "utf8");
+      existing = JSON.parse(content || "[]");
+    } catch {
+      existing = [];
+    }
+
+    const next = [...existing, entry];
+    await writeFile(filePath, JSON.stringify(next, null, 2), "utf8");
+  } catch (error) {
+    console.warn("Filesystem persistence unavailable; using in-memory fallback.", error);
+  }
 
   return entry;
 }

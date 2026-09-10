@@ -165,7 +165,7 @@ export default async function Home() {
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {causeData.map((cause) => (
-              <article key={cause.title} className="rounded-[22px] border border-slate-200 bg-white p-7 shadow-[0_12px_28px_rgba(15,52,96,0.04)]">
+              <article key={cause.title} className="flex h-full flex-col rounded-[22px] border border-slate-200 bg-white p-7 shadow-[0_12px_28px_rgba(15,52,96,0.04)]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#eaf2ff] text-xl font-black text-[#0e4b9c]">
                   ✦
                 </div>
@@ -197,16 +197,16 @@ export default async function Home() {
             {projectData.map((project, index) => (
               <article
                 key={project.slug}
-                className={`${index === 0 ? "lg:row-span-2" : ""} overflow-hidden rounded-[26px] border border-slate-200 bg-white shadow-[0_14px_34px_rgba(15,52,96,0.06)]`}
+                className={`${index === 0 ? "lg:row-span-2" : ""} flex h-full flex-col overflow-hidden rounded-[26px] border border-slate-200 bg-white shadow-[0_14px_34px_rgba(15,52,96,0.06)]`}
               >
-                <Link href={`/projects/${project.slug}`} className="block">
+                <Link href={`/projects/${project.slug}`} className="block overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`${index === 0 ? "h-[430px]" : "h-[250px]"} floating-image w-full object-cover transition duration-300 hover:scale-[1.02]`}
+                    className={`${index === 0 ? "aspect-[16/11]" : "aspect-[4/3]"} floating-image w-full object-cover transition duration-300 hover:scale-[1.02]`}
                   />
                 </Link>
-                <div className="p-5 md:p-6">
+                <div className="flex flex-1 flex-col p-5 md:p-6">
                   <p className="text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#0e4b9c]">
                     {project.category}
                   </p>
@@ -270,7 +270,7 @@ export default async function Home() {
                 <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined}>
                   <NewsImage src={story.image} alt={story.title} className="h-56 w-full object-cover" />
                 </Link>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <span className="inline-block text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-[#0e4b9c]">
                     {story.category}
                   </span>

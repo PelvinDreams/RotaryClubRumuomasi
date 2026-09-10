@@ -26,13 +26,13 @@ export const projectData = [
     title: "Health and civic advocacy",
     category: "Advocacy",
     image:
-      "https://images.unsplash.com/photo-1576765608535-b04f2c5adf8a?auto=format&fit=crop&w=1200&q=80",
+      "https://www.current-matters.blog/wp-content/uploads/2022/02/IMG-20220225-WA0091.jpg",
     summary:
       "Rotary Club of Rumuomasi promoted public awareness around civic responsibility, ethical leadership, and healthier communities.",
     details:
       "Rotary’s health and community work focuses on prevention, education, and stronger public systems. Through community outreach, member advocacy, and partnerships with local institutions, the club helps people understand how to improve health outcomes, support social accountability, and participate in decisions that affect their daily lives.",
     gallery: [
-      "https://images.unsplash.com/photo-1576765608535-b04f2c5adf8a?auto=format&fit=crop&w=1200&q=80",
+      "https://www.current-matters.blog/wp-content/uploads/2022/02/IMG-20220225-WA0091.jpg",
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
@@ -48,13 +48,13 @@ export const projectData = [
     title: "Community partnerships for service delivery",
     category: "Community engagement",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "https://scontent.flos3-1.fna.fbcdn.net/v/t39.30808-6/488870937_9751865411519593_2263329419633151442_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1366&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aJT2El5QFTMQ7kNvwEM7r5P&_nc_oc=Ado_Fh4wjNg5vuigc9UkBwF6Q7Dtp9td-Ri5-BVQ-0WpitGZ2i2MTWhsu0fSGw2Ch3M&_nc_zt=23&_nc_ht=scontent.flos3-1.fna&_nc_gid=v5CHBj0tRsZR49tA0rF3QQ&_nc_ss=7b289&oh=00_AQKGdCPjP2hnGTZb-wrM05ZOX00pC2NrzwlSr5kImXGg_g&oe=6AA881B3",
     summary:
       "By building strategic partnerships across institutions and local actors, the club amplified its impact on public trust and community development.",
     details:
       "Rotary is strongest when it works with others. Community partnerships help clubs connect local leaders, schools, health workers, civil society actors, and residents around common goals. This model strengthens service delivery, improves trust, and creates more sustainable solutions that reflect local needs rather than one-off interventions.",
     gallery: [
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "https://scontent.flos3-1.fna.fbcdn.net/v/t39.30808-6/488870937_9751865411519593_2263329419633151442_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1366&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aJT2El5QFTMQ7kNvwEM7r5P&_nc_oc=Ado_Fh4wjNg5vuigc9UkBwF6Q7Dtp9td-Ri5-BVQ-0WpitGZ2i2MTWhsu0fSGw2Ch3M&_nc_zt=23&_nc_ht=scontent.flos3-1.fna&_nc_gid=v5CHBj0tRsZR49tA0rF3QQ&_nc_ss=7b289&oh=00_AQKGdCPjP2hnGTZb-wrM05ZOX00pC2NrzwlSr5kImXGg_g&oe=6AA881B3",
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
