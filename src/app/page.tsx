@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MobileNav } from "@/components/MobileNav";
+import { NewsImage } from "@/components/NewsImage";
 import { RotaryLogo } from "@/components/RotaryLogo";
 import { causeData, projectData } from "@/data/site";
 import { getNewsArticles } from "@/lib/news";
@@ -267,7 +268,7 @@ export default async function Home() {
             {stories.map((story) => (
               <article key={story.slug} className="overflow-hidden rounded-[20px] border border-slate-200 bg-white shadow-[0_12px_28px_rgba(15,52,96,0.04)]">
                 <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined}>
-                  <img src={story.image} alt={story.title} className="h-56 w-full object-cover" />
+                  <NewsImage src={story.image} alt={story.title} className="h-56 w-full object-cover" />
                 </Link>
                 <div className="p-5">
                   <span className="inline-block text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-[#0e4b9c]">

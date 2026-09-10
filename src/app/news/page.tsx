@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsImage } from "@/components/NewsImage";
 import { RotaryLogo } from "@/components/RotaryLogo";
 import { getNewsArticles } from "@/lib/news";
 
@@ -32,7 +33,7 @@ export default async function NewsPage() {
           {stories.map((story) => (
             <article key={story.slug} className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_rgba(12,31,57,0.06)]">
               <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined}>
-                <img src={story.image} alt={story.title} className="h-64 w-full object-cover" />
+                <NewsImage src={story.image} alt={story.title} className="h-64 w-full object-cover" />
               </Link>
               <div className="p-6">
                 <span className="inline-block text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-[#0e4b9c]">{story.category}</span>

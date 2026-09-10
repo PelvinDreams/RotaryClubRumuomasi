@@ -11,6 +11,13 @@ export type NewsArticle = {
 };
 
 const fallbackNews: NewsArticle[] = newsData as NewsArticle[];
+const defaultNewsImage =
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80";
+
+function normalizeNewsImage(value: unknown, fallback: string = defaultNewsImage) {
+  const candidate = typeof value === "string" ? value.trim() : "";
+  return candidate || fallback;
+}
 
 function slugify(value: string) {
   return value
@@ -50,18 +57,30 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
       return bTime - aTime;
     });
 
-    return sorted.slice(0, 3).map((item: Record<string, unknown>, index: number): NewsArticle => ({
-      slug: slugify(String(item.title || `news-story-${index + 1}`)),
-      title: String(item.title || fallbackNews[index]?.title || "Rotary community story"),
-      category: Array.isArray(item.category) && item.category.length > 0 ? String(item.category[0]) : "Community",
-      image:
-        String(item.image_url || fallbackNews[index]?.image || "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"),
-      excerpt:
-        String(item.description || fallbackNews[index]?.excerpt || "Rotary continues to create meaningful impact in local communities."),
-      body:
-        String(item.content || item.description || fallbackNews[index]?.body || "Rotary keeps advancing service-driven solutions that help communities thrive."),
-      link: String(item.link || "#"),
-    }));
+    return sorted.slice(0, 3).map((item: Record<string, unknown>, index: number): NewsArticle => {
+      const fallbackImage = fallbackNews[index]?.image || defaultNewsImage;
+      const articleImage = normalizeNewsImage(
+        item.image_url ||
+          item.image ||
+          item.thumbnail ||
+          item.urlToImage ||
+          item.media ||
+          item.image_url,
+        fallbackImage,
+      );
+
+      return {
+        slug: slugify(String(item.title || `news-story-${index + 1}`)),
+        title: String(item.title || fallbackNews[index]?.title || "Rotary community story"),
+        category: Array.isArray(item.category) && item.category.length > 0 ? String(item.category[0]) : "Community",
+        image: articleImage,
+        excerpt:
+          String(item.description || fallbackNews[index]?.excerpt || "Rotary continues to create meaningful impact in local communities."),
+        body:
+          String(item.content || item.description || fallbackNews[index]?.body || "Rotary keeps advancing service-driven solutions that help communities thrive."),
+        link: String(item.link || "#"),
+      };
+    });
   } catch (error) {
     console.error("News API fallback triggered:", error);
     return fallbackNews;
