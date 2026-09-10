@@ -80,8 +80,27 @@ p {
   }
 }
 
+@keyframes float-up {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.9;
+  }
+}
+
 .loader-ring {
   animation: spin-slow 1.4s linear infinite;
+}
+
+.scroll-top-button {
+  animation: float-up 2.4s ease-in-out infinite;
 }
 
 .hero-visual {

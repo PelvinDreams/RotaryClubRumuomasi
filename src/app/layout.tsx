@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppLoader } from "@/components/AppLoader";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-[#f3f7fb] text-[#0a1f3a]">
         <AppLoader />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
