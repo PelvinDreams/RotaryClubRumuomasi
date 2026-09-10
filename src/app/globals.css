@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3f7fb;
+  --foreground: #0a1f3a;
 }
 
 @theme inline {
@@ -12,15 +12,82 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-pan {
+  0% {
+    background-position: center center;
+    background-size: 100%;
+  }
+  50% {
+    background-position: center center;
+    background-size: 110%;
+  }
+  100% {
+    background-position: center center;
+    background-size: 100%;
+  }
+}
+
+@keyframes image-float {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.04) translate3d(0, -6px, 0);
+  }
+  100% {
+    transform: scale(1.02) translate3d(0, 4px, 0);
+  }
+}
+
+.loader-ring {
+  animation: spin-slow 1.4s linear infinite;
+}
+
+.hero-visual {
+  animation: hero-pan 18s ease-in-out infinite alternate;
+}
+
+.floating-image {
+  animation: image-float 12s ease-in-out infinite alternate;
 }
