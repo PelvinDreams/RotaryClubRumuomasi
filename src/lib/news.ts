@@ -28,7 +28,9 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
   try {
     const response = await fetch(
       `https://newsdata.io/api/1/latest?apikey=${apiKey}&language=en&category=top,business,health,technology,science&country=ng`,
-      { next: { revalidate: 3600 } },
+      {
+        cache: "no-store",
+      },
     );
 
     if (!response.ok) {
@@ -42,7 +44,13 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
       return fallbackNews;
     }
 
-    return results.slice(0, 3).map((item: Record<string, unknown>, index: number): NewsArticle => ({
+    const sorted = [...results].sort((a, b) => {
+      const aTime = new Date(String(a.pubDate || a.created_at || 0)).getTime();
+      const bTime = new Date(String(b.pubDate || b.created_at || 0)).getTime();
+      return bTime - aTime;
+    });
+
+    return sorted.slice(0, 3).map((item: Record<string, unknown>, index: number): NewsArticle => ({
       slug: slugify(String(item.title || `news-story-${index + 1}`)),
       title: String(item.title || fallbackNews[index]?.title || "Rotary community story"),
       category: Array.isArray(item.category) && item.category.length > 0 ? String(item.category[0]) : "Community",
