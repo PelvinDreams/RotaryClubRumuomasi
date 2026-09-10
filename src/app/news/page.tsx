@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { RotaryLogo } from "@/components/RotaryLogo";
-import { newsData } from "@/data/site";
+import { getNewsArticles } from "@/lib/news";
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const stories = await getNewsArticles();
+
   return (
     <main className="min-h-screen bg-[#f3f7fb] text-[#0a1f3a]">
       <header className="border-b border-slate-200 bg-white">
@@ -27,14 +29,14 @@ export default function NewsPage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {newsData.map((story) => (
+          {stories.map((story) => (
             <article key={story.slug} className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_rgba(12,31,57,0.06)]">
-              <Link href={`/news/${story.slug}`}>
+              <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined}>
                 <img src={story.image} alt={story.title} className="h-64 w-full object-cover" />
               </Link>
               <div className="p-6">
                 <span className="inline-block text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-[#0e4b9c]">{story.category}</span>
-                <Link href={`/news/${story.slug}`} className="mt-3 block text-2xl font-bold text-[#0a1f3a] hover:text-[#0e4b9c]">
+                <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined} className="mt-3 block text-2xl font-bold text-[#0a1f3a] hover:text-[#0e4b9c]">
                   {story.title}
                 </Link>
                 <p className="mt-3 text-slate-600">{story.excerpt}</p>

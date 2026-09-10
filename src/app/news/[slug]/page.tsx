@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RotaryLogo } from "@/components/RotaryLogo";
-import { newsData } from "@/data/site";
+import { getNewsArticles } from "@/lib/news";
 
-export default function NewsDetailsPage({ params }: { params: { slug: string } }) {
-  const story = newsData.find((item) => item.slug === params.slug);
+export default async function NewsDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const stories = await getNewsArticles();
+  const story = stories.find((item) => item.slug === slug);
 
   if (!story) {
     notFound();

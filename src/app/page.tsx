@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { MobileNav } from "@/components/MobileNav";
 import { RotaryLogo } from "@/components/RotaryLogo";
-import { causeData, newsData, projectData } from "@/data/site";
+import { causeData, projectData } from "@/data/site";
+import { getNewsArticles } from "@/lib/news";
 
 const stats = [
   { value: "1.2M+", label: "Rotary members worldwide, connected by purpose and service." },
@@ -9,11 +11,13 @@ const stats = [
   { value: "99.9%", label: "Reduction in global polio cases since the campaign began." },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const stories = await getNewsArticles();
+
   return (
     <main>
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#091d36]/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
           <Link href="#top" className="flex items-center gap-3 text-white">
             <img
               src="https://edge.sitecorecloud.io/rotaryinter069c-rotary3836-prod8518-4439/media/project/rotary/rotary-org/default-images/rotary-white-logo.svg?iar=0"
@@ -34,7 +38,7 @@ export default function Home() {
             <a href="#join" className="transition hover:text-white">Join</a>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 md:flex">
             <Link
               href="/donate"
               className="inline-flex items-center justify-center rounded-full border border-[#d7b26a] bg-transparent px-4 py-2.5 text-sm font-bold text-[#f3d59a] transition hover:bg-white/5"
@@ -47,6 +51,10 @@ export default function Home() {
             >
               Become a Member
             </Link>
+          </div>
+
+          <div className="md:hidden">
+            <MobileNav />
           </div>
         </div>
       </header>
@@ -256,16 +264,16 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {newsData.map((story) => (
+            {stories.map((story) => (
               <article key={story.slug} className="overflow-hidden rounded-[20px] border border-slate-200 bg-white shadow-[0_12px_28px_rgba(15,52,96,0.04)]">
-                <Link href={`/news/${story.slug}`}>
+                <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined}>
                   <img src={story.image} alt={story.title} className="h-56 w-full object-cover" />
                 </Link>
                 <div className="p-5">
                   <span className="inline-block text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-[#0e4b9c]">
                     {story.category}
                   </span>
-                  <Link href={`/news/${story.slug}`} className="mt-3 block text-2xl font-bold leading-tight text-[#0a1f3a] hover:text-[#0e4b9c]">
+                  <Link href={story.link && story.link !== "#" ? story.link : `/news/${story.slug}`} target={story.link && story.link !== "#" ? "_blank" : undefined} rel={story.link && story.link !== "#" ? "noreferrer" : undefined} className="mt-3 block text-2xl font-bold leading-tight text-[#0a1f3a] hover:text-[#0e4b9c]">
                     {story.title}
                   </Link>
                   <p className="mt-3 text-slate-600">{story.excerpt}</p>
