@@ -201,7 +201,7 @@ export default async function Home() {
               >
                 <Link href={`/projects/${project.slug}`} className="block">
                   <img
-                    src={index === 0 ? "https://www.energyfocusreport.com/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-29-at-9.57.02-AM.jpeg" : project.image}
+                    src={project.image}
                     alt={project.title}
                     className={`${index === 0 ? "h-[430px]" : "h-[250px]"} floating-image w-full object-cover transition duration-300 hover:scale-[1.02]`}
                   />

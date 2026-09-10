@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80";
+
 type ImageWheelProps = {
   images: string[];
   size?: number;
@@ -86,16 +89,26 @@ export function ImageWheel({ images, size = 420, className = "" }: ImageWheelPro
               className="absolute left-1/2 top-1/2 h-24 w-24 overflow-hidden rounded-[22px] border border-white/80 bg-slate-200 shadow-[0_20px_40px_rgba(12,31,57,0.18)] md:h-28 md:w-28"
               style={style}
             >
-              <img src={image} alt={`Rotary project ${index + 1}`} className="h-full w-full object-cover" />
+              <img
+                src={image || FALLBACK_IMAGE}
+                alt={`Rotary project ${index + 1}`}
+                className="h-full w-full object-cover"
+                onError={(event) => {
+                  event.currentTarget.src = FALLBACK_IMAGE;
+                }}
+              />
             </div>
           );
         })}
 
         <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border-[6px] border-[#d7b26a] bg-[#0e4b9c] shadow-[0_20px_50px_rgba(14,75,156,0.35)] md:h-32 md:w-32">
           <img
-            src={images[0]}
+            src={images[0] || FALLBACK_IMAGE}
             alt="Featured Rotary project"
             className="h-full w-full object-cover"
+            onError={(event) => {
+              event.currentTarget.src = FALLBACK_IMAGE;
+            }}
           />
         </div>
       </div>
