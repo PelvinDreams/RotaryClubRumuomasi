@@ -33,6 +33,7 @@ export const projectData = [
       "Rotary’s health and community work focuses on prevention, education, and stronger public systems. Through community outreach, member advocacy, and partnerships with local institutions, the club helps people understand how to improve health outcomes, support social accountability, and participate in decisions that affect their daily lives.",
     gallery: [
       "https://www.current-matters.blog/wp-content/uploads/2022/02/IMG-20220225-WA0091.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXwIL-UzeEWFnG0est79x3xoeIOdvSzBsCKwb5EGidB0lEVN8DotgsGO4&s=10",
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
